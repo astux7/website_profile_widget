@@ -1,13 +1,13 @@
-<h1>Website profile widged</h1>
+<h1>Website profile widget</h1>
 
 I wanted to try to create same thing as using linkedin, facebook ect. when you put any url you see meta tags (description and logo) and title in nice box which links to added url.
 
 Lets give an explanation and examples:
 
-Github profile
+Github profile (you get this using this widget and link https://github.com/username)
 ![alt tag](https://lh4.googleusercontent.com/-Y8hQrw_w_W0/Ur9c3Gx07nI/AAAAAAAAInA/kkv5TErRgus/w1916-h732-no/github.png)
 
-Linkedin profile
+Linkedin profile (you get this using this widget and link http://uk.linkedin.com/in/username)
 ![alt tag](https://lh4.googleusercontent.com/-HK2dwuv5EQw/Ur9c3MSwt4I/AAAAAAAAImw/67mzCbUKmq4/w1348-h676-no/linkedin.png)
 
 

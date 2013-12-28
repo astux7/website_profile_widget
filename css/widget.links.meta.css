@@ -1,0 +1,39 @@
+#widget-profile {
+  border: 4px solid #DfDfDf;
+  background-color:  #efefef;
+  border-radius: 5px;
+  margin: 5px;
+  width: 350px;
+  margin-bottom: 20px;
+  margin-top: 8px;
+  display: none;
+}
+
+#widget-profile a{
+  overflow: auto;
+  vertical-align: top;
+  display: block;
+}
+
+#widget-profile img {
+  max-width: 113px; 
+  width: auto;
+}
+
+#widget-profile span {
+  width: 230px;
+  float: right;
+  margin: 3px;
+  color: #6a6a6a;
+  font-family: "Times New Roman";
+  vertical-align: top;
+  font-size: 13px;
+}
+
+.profile-title {
+  font-size: 15px;
+  font-weight: bold;
+  float: right;
+  margin: 0px;
+  padding-bottom: 5px;
+  }

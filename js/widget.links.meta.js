@@ -1,7 +1,9 @@
 
-var pattern_description = /name="description"\scontent="(.+?)"/;  
-var pattern_logo = /property="og:image"\scontent="(.+?)"/;  
-var pattern_title =  /<title>(.+?)<\/title>/i;  
+var pattern_description = [/name="description"\scontent="(.+?)"/, /content="(.+?)"\sname="description"/]
+// need to make any place
+var pattern_logo = [/property="og:image"\scontent="(.+?)"/, /name="msapplication-TileImage"\scontent="(.+?)"/]; 
+// anu img in meta 
+var pattern_title =  [/<title>(.+?)<\/title>/i];  
 var scripts = document.getElementsByTagName('script');
 
 for (var i = 0; i < scripts.length; i++) {
@@ -10,18 +12,39 @@ for (var i = 0; i < scripts.length; i++) {
         var url = script.getAttribute('data-id');
     }
 }
-
+//url = "http://www.codewars.com/users/astux7"
+//url ="http://www.linkedin.com/in/astabevainyte"
 jsonlib.scrape('html head', url, function(data) { parse_data(data, url); });
 
 
+
 function parse_data(data, url){
-	var output = Array(url);
-  output[1] = get_description(data, pattern_logo);
-  output[2] = get_description(data, pattern_description);
-  output[3] = get_description(data, pattern_title);
-  $("#widget-profile").html('<a href="'+output[0]+'"><img width="25%" height="25%" src="'+output[1]+'" /><br />'+output[3]+": <br />  "+output[2]+'</a>');
+	console.log(data);
+	
+	var title_place = get_description(data, pattern_title);
+	
+  var image_path = get_description(data, pattern_logo), image_place = "";
+  if (image_path.length > 1){
+    image_place = '<img alt="'+title_place+'" title="'+title_place+'" src="'
+  	+image_path+'" />'
+  }
+
+  var description_place = get_description(data, pattern_description);
+ 
+  
+  $("#widget-profile").html('<a rel="nofollow" href="'
+  	+url+
+  	'">'+image_place+'<span><span class="profile-title">'+title_place+"</span><br />  "+description_place+'</span></a>');
+  $("#widget-profile").css({ display: "block" });
 }
 function get_description(info, pattern){
-  var matches = info.join(' ').match(pattern);
-  return matches[1];
+  var matches = Array();
+  for (var i = 0; i < pattern.length; i++){
+       matches = info.join(' ').match(pattern[i]);
+       console.log(matches);
+  if (matches && matches.length > 1){
+  	return matches[1];
+  }
+}
+  return "";
 }

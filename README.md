@@ -18,6 +18,7 @@ and more website profiles ...
 <h4> Demo of this widget</h4>
 Download the files from github (or clone/fork) and in root directory of this project you can find ./demo folder
 inside where is index.html to run !
+
 ![alt tag](https://lh4.googleusercontent.com/-HJT6quCjars/UsxIYyr2rII/AAAAAAAAIow/mB510dliBKs/w451-h250-no/widget_demo.png)
 
 put the link and click the button!

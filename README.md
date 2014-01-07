@@ -30,6 +30,10 @@ you dont need to change just copy:
 
 open index.html file in project root dir:
 
+don't forget to add the url here 
+``` html data-url="ADD_URL_YOU_WANT_TO_EXTRACT_INFO" ```
+look in code below
+
 ```html
 <html>
 <head>
@@ -53,7 +57,9 @@ open index.html file in project root dir:
 <!-- this box need to put any you want in body of you website -->
 <div id="widget-profile" style=""></div>
 <!-- this script can be added to before </body> tag or next to this-->
-<script src="js/widget.links.meta.js" id="widget-script" data-url="https://github.com/astux7"></script>
+<!-- i.e. data-url="https://github.com/astux7" here you can change the url of the website 
+which meta info you want to extract and show in box -->
+<script src="js/widget.links.meta.js" id="widget-script" data-url="ADD_URL_YOU_WANT_TO_EXTRACT_INFO"></script>
 <!-- end body to copy -->
 
 </body>

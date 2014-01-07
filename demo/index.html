@@ -1,0 +1,41 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Website meta tags widget demo</title>
+  <script src="../js/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../css/widget.links.meta.css">
+  <script src="../js/jsonlib.js"></script>
+  <style type="text/css">
+  #url-selected{
+  	width: 300px;
+  }
+  </style>
+</head>
+<body>
+<h1> Website meta tags widget DEMO</h1>
+<span></span
+<h3> Change Link:</h3>
+
+<input id="url-selected" value="https://twitter.com/jquery" />
+<input type="submit" id="button" value="Change link!" />
+
+<div id="widget-profile" >
+  <span class='before-load'>Please Wait!</span>
+</div>
+
+<script src="../js/widget.links.meta.js" id="widget-script" data-url="https://twitter.com/jquery">
+</script>
+<script>
+//<![CDATA[
+ function executeWidget(){
+    var url_new = $('#url-selected').val();
+    $('#widget-profile').html("<span class='before-load'>Please Wait!</span> ")
+    renderWidget(url_new);
+  }
+$(document).ready(function(){
+  $('#button').click(function(){executeWidget();});
+});
+//]]/>
+</script>
+</body>
+</html>
